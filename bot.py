@@ -16,7 +16,7 @@ async def on_message(message):
         return
     if message.content.startswith('[LFG]'):
         return
-    print('MESSAGE GET {}'.format(message.contentc))
+    print('MESSAGE GET {}'.format(message.content))
     msg = 'Hello {0.author.mention} \n' \
           'Pour poster un message dans ce channel, ton message doit commencer par [LFG]\n' \
           'Seuls les annonces sont acceptées, merci de ne pas répondre dans ce channel, ' \
