@@ -2,7 +2,7 @@ import discord
 import os
 
 TOKEN = os.getenv('TOKEN', None)
-CHANNELS = map(int, os.getenv('CHANNELS', "").split(','))
+CHANNELS = list(map(int, os.getenv('CHANNELS', "").split(',')))
 
 client = discord.Client()
 
@@ -10,6 +10,7 @@ client = discord.Client()
 @client.event
 async def on_message(message):
     # we do not want the bot to reply to itself
+    print(CHANNELS)
     if message.author == client.user:
         return
     if message.author.id == int(os.getenv('AUTHOR', 0)):
