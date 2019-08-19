@@ -16,8 +16,9 @@ async def on_message(message):
     if message.content.startswith('[LFG]'):
         return
     msg = 'Hello {0.author.mention} \n' \
-          'Pour utiliser ce channel tu dois commencer ton message par [LFG] et poster ton annonce.\n' \
-          'Tu ne dois pas repondre dans ce channel, mais repondre en whisp ou dans un autre channel.\n'.format(message)
+          'Pour poster un message dans ce channel, ton message doit commencer par [LFG]\n' \
+          'Seuls les annonces sont acceptées, merci de ne pas répondre dans ce channel, ' \
+          'mais répondre dans un autre channel ou en MP(modifié)\n'.format(message)
     await message.author.send(msg)
     await message.delete()
 
