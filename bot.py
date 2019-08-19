@@ -9,13 +9,9 @@ client = discord.Client()
 
 @client.event
 async def on_message(message):
-    # we do not want the bot to reply to itself
-    print(CHANNELS)
-    if message.author == client.user:
-        return
-    if message.author.id == int(os.getenv('AUTHOR', 0)):
-        message.author.send('TEST OK')
-    if message.channel.id not in CHANNELS:
+    if message.author == client.user \
+            or message.channel.id not in CHANNELS \
+            or message.content.startswith('[LFG]'):
         return
     if message.content.startswith('[LFG]'):
         return
