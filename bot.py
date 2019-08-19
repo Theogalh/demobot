@@ -12,11 +12,12 @@ async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
+    if message.author.id == int(os.getenv('AUTHOR', 0)):
+        message.author.send('TEST OK')
     if message.channel.id not in CHANNELS:
         return
     if message.content.startswith('[LFG]'):
         return
-    print('MESSAGE GET {}'.format(message.content))
     msg = 'Hello {0.author.mention} \n' \
           'Pour poster un message dans ce channel, ton message doit commencer par [LFG]\n' \
           'Seuls les annonces sont acceptées, merci de ne pas répondre dans ce channel, ' \
