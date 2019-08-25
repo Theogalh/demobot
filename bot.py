@@ -18,7 +18,7 @@ async def on_message(message):
     msg = 'Hello {0.author.mention} \n' \
           'Pour poster un message dans ce channel, ton message doit commencer par [LFG]\n' \
           'Seuls les annonces sont acceptées, merci de ne pas répondre dans ce channel, ' \
-          'mais répondre dans un autre channel ou en MP.\nVoici ton message:\n\n{}'.format(message, message.content)
+          'mais répondre dans un autre channel ou en MP.\nVoici ton message:\n\n{0.content}'.format(message)
     await message.author.send(msg)
     await message.delete()
 
